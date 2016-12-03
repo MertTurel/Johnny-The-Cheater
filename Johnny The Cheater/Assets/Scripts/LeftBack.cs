@@ -9,6 +9,7 @@ public class LeftBack : MonoBehaviour,IGvrGazeResponder {
 	public float barValue = 0;
 	public ExamPaper cheatFrom;
 	public ImCheating johnny;
+	public bool cheatEnabled = true;
 
 	void Start(){
 		img.fillAmount = barValue;
@@ -18,8 +19,7 @@ public class LeftBack : MonoBehaviour,IGvrGazeResponder {
 
 		Check ();
 
-		if (fill == true && barValue >= 1f) {
-			Debug.Log ("asd");
+		if (fill == true && barValue >= 1f && cheatEnabled == true) {
 			cheatFrom.leftBack = true;
 			gameObject.GetComponent<Renderer> ().material.color = Color.green;
 		} else {
@@ -28,8 +28,8 @@ public class LeftBack : MonoBehaviour,IGvrGazeResponder {
 	}
 
 	void Check(){
-		if (fill == true && barValue <= 1f) {
-			barValue += Time.deltaTime/4;
+		if (fill == true && barValue <= 1f && cheatEnabled == true) {
+			barValue += Time.deltaTime; //deltaTime/X yavaşlatır
 			img.fillAmount = barValue;
 		} else {
 			barValue = 0;
@@ -39,9 +39,15 @@ public class LeftBack : MonoBehaviour,IGvrGazeResponder {
 	}
 
 	public void OnGazeEnter(){
-		gameObject.GetComponent<Renderer> ().material.color = Color.yellow;
-		johnny.isCheating = true;
-		fill = true;
+		if (cheatEnabled == true) {
+			gameObject.GetComponent<Renderer> ().material.color = Color.yellow;
+			johnny.isCheating = true;
+			fill = true;
+		} else {
+			gameObject.GetComponent<Renderer> ().material.color = Color.gray;
+			johnny.isCheating = false;
+			fill = false;
+		}
 	}
 
 	public void OnGazeExit(){

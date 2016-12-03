@@ -6,7 +6,7 @@ public class Catch : MonoBehaviour {
 	public bool cheating;
 
 	void OnTriggerStay(){
-		Debug.Log ("In");
+		Debug.Log ("In Danger Zone");
 		if(cheating == true){
 			Debug.Log ("I Get You");
 			lfc.busted = true;
