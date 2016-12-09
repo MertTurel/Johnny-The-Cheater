@@ -1314,6 +1314,7 @@ MonoBehaviour:
   scoreInfo: {fileID: 537152641}
   gameMan: {fileID: 1706755755}
   isTimeOver: 0
+  myScore: {fileID: 630319829}
 --- !u!1 &566542062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1603,6 +1604,8 @@ MonoBehaviour:
   scoreCircle: {fileID: 1835956902}
   scoreInfo: {fileID: 537152641}
   score: 0
+  tm: {fileID: 548912548}
+  pass: {fileID: 1595184415}
   leftFPaper: {fileID: 1136107026}
   leftPaper: {fileID: 575592602}
   leftBPaper: {fileID: 153945773}
@@ -3793,6 +3796,150 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 422006, guid: f2cca35a924678c47b34db3927e4d79e, type: 2}
   m_PrefabInternal: {fileID: 1583865711}
+--- !u!1 &1595184413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1595184416}
+  - 114: {fileID: 1595184415}
+  - 82: {fileID: 1595184414}
+  m_Layer: 0
+  m_Name: WinManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1595184414
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1595184413}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &1595184415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1595184413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 932776a72e6b741e1a0103047d34c0c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passD: 0
+  passDD: 0
+  passC: 0
+  passCC: 0
+  passB: 0
+  passBB: 0
+  passA: 0
+  passAA: 0
+  leftFPaper: {fileID: 1136107026}
+  leftPaper: {fileID: 575592602}
+  leftBPaper: {fileID: 153945773}
+  backPaper: {fileID: 686632356}
+  rightFPaper: {fileID: 1719047347}
+  rightPaper: {fileID: 860429983}
+  rightBPaper: {fileID: 95689236}
+  scoreCircle: {fileID: 1835956902}
+  scoreInfo: {fileID: 537152641}
+  resume: {fileID: 1330202734}
+  pause: {fileID: 1403815150}
+  main: {fileID: 1731131413}
+  restart: {fileID: 1119351761}
+  teacherObj: {fileID: 512032962}
+  teacher: {fileID: 512032963}
+  gameOverPoint: {fileID: 691844420}
+  target: {fileID: 860463160}
+  audSource: {fileID: 1595184414}
+  gameWin: {fileID: 0}
+  gameWinAA: {fileID: 0}
+  tm: {fileID: 548912548}
+--- !u!4 &1595184416
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1595184413}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 8.92, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 36
 --- !u!1 &1601290130
 GameObject:
   m_ObjectHideFlags: 0

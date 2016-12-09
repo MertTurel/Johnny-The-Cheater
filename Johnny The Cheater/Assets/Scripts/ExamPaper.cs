@@ -8,6 +8,8 @@ public class ExamPaper : MonoBehaviour {
 	public Image scoreCircle;
 	public Text scoreInfo;
 	public int score = 0;
+	public TimeIsUp tm;
+	public PassedManager pass;
 
 	//AnswersRemaining
 	int remainingLeftF = 2;
@@ -110,6 +112,39 @@ public class ExamPaper : MonoBehaviour {
 				rightBack = false;
 				rightBPaper.cheatEnabled = false;
 			}
+		}
+
+		if(score >= 60 && score < 65 && tm.isTimeOver == true){
+			//D
+			pass.passD = true;
+		}
+		if (score >= 65 && score < 70 && tm.isTimeOver == true) {
+			//D+
+			pass.passDD = true;
+		}
+		if (score >= 70 && score < 75 && tm.isTimeOver == true) {
+			//C
+			pass.passC = true;
+		}
+		if (score >= 75 && score < 80 && tm.isTimeOver == true) {
+			//C+
+			pass.passCC = true;
+		}
+		if (score >= 80 && score < 85 && tm.isTimeOver == true) {
+			//B
+			pass.passB = true;
+		}
+		if (score >= 85 && score < 90 && tm.isTimeOver == true) {
+			//B+
+			pass.passBB = true;
+		}
+		if (score >= 90 && score < 100 && tm.isTimeOver == true) {
+			//A
+			pass.passA = true;
+		}
+		if (score == 100) {
+			//A+
+			pass.passAA = true;
 		}
 		//End Of Update
 	}

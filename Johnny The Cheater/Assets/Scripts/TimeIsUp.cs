@@ -12,6 +12,7 @@ public class TimeIsUp : MonoBehaviour {
 	public Text scoreInfo;
 	public GameOverManager gameMan;
 	public bool isTimeOver = false;
+	public ExamPaper myScore;
 
 	void Update () {
 		if (seconds <= 0f) {
@@ -19,18 +20,25 @@ public class TimeIsUp : MonoBehaviour {
 			if (minutes >= 1f) {
 				minutes -= 1f;
 			} else {
-				seconds = 0f;
-				minutes = 0f;
+				if (myScore.score < 60) {
+					seconds = 0f;
+					minutes = 0f;
 
-				gameMan.isGameOver = true;
-				scoreInfo.text = "TIME UP";
+					gameMan.isGameOver = true;
+					scoreInfo.text = "TIME UP";
 
-				isTimeOver = true;
+					isTimeOver = true;
+				} else {
+					seconds = 0f;
+					minutes = 0f;
+					isTimeOver = true;
+				}
 			}
-		} else if (minutes == 0f && seconds <= 10f) {
-			Debug.Log ("Low Time Sesi Çalınacak");
 		} else if(pauseTime == false) {
 				seconds -= Time.deltaTime;
+			if (minutes == 0f && seconds <= 10f) {
+				Debug.Log ("Low Time Sesi Çalınacak");
+			}
 		}
 	}
 }
