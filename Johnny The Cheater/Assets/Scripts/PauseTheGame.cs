@@ -7,6 +7,7 @@ public class PauseTheGame : MonoBehaviour, IGvrGazeResponder {
 	public Image img;
 	public float barValue = 0;
 	public bool fill = false;
+	public bool isPaused = false;
 	public GameObject resume;
 	public GameObject mainmenu;
 	public LookForCheaters teacher;
@@ -56,6 +57,7 @@ public class PauseTheGame : MonoBehaviour, IGvrGazeResponder {
 			//Hoca ve Süre durdurulacak
 			teacher.paused = true;
 			timeMan.pauseTime = true;
+			isPaused = true;
 		}
 	}
 

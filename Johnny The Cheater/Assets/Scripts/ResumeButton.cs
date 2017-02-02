@@ -11,6 +11,7 @@ public class ResumeButton : MonoBehaviour, IGvrGazeResponder {
 	public GameObject pauseButton;
 	public LookForCheaters teacher;
 	public TimeIsUp timeMan;
+	public PauseTheGame pause;
 
 	//Papers
 	public LeftFront leftFPaper;
@@ -57,6 +58,7 @@ public class ResumeButton : MonoBehaviour, IGvrGazeResponder {
 			//Hoca ve Süre tekrar başlatılacak.
 			teacher.paused = false;
 			timeMan.pauseTime = false;
+			pause.isPaused = false;
 		}
 	}
 

@@ -10,6 +10,7 @@ public class Right : MonoBehaviour,IGvrGazeResponder {
 	public ExamPaper cheatFrom;
 	public ImCheating johnny;
 	public bool cheatEnabled = true;
+	public bool instaCheat = false;
 
 	void Start(){
 		img.fillAmount = barValue;
@@ -29,7 +30,11 @@ public class Right : MonoBehaviour,IGvrGazeResponder {
 
 	void Check(){
 		if (fill == true && barValue <= 1.1f && cheatEnabled == true) {
-			barValue += Time.deltaTime;
+			if (instaCheat == false) {
+				barValue += Time.deltaTime;
+			} else if (instaCheat == true) {
+				barValue += Time.deltaTime * 4;
+			}			
 			img.fillAmount = barValue;
 		} else {
 			barValue = 0;

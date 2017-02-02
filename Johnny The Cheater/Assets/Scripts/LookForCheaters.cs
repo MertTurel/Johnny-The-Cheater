@@ -17,6 +17,7 @@ public class LookForCheaters : MonoBehaviour {
 
 	public bool busted = false;
 	public bool paused = false;
+	public bool fakeCall = false;
 
 	public Text scoreInfo;
 
@@ -52,7 +53,7 @@ public class LookForCheaters : MonoBehaviour {
 	}
 
 	void Update () {
-		if (checkForCheater == 1 && agent.remainingDistance < 2f) {
+		if (checkForCheater == 1 && agent.remainingDistance < 2f && paused == false && fakeCall == false) {
 			if (!source.isPlaying) {
 				source.PlayOneShot (alert);
 			}
@@ -80,6 +81,12 @@ public class LookForCheaters : MonoBehaviour {
 			agent.Stop ();
 		} else if(paused == false && busted == false) {
 			agent.Resume ();
+		}
+		//FakeCall
+		if (fakeCall == true) {
+			agent.Stop ();
+		} else if (fakeCall == false && busted == false && paused == false) {
+			agent.Resume();
 		}
 	}	
 }
