@@ -16,6 +16,8 @@ public class FakeCall: MonoBehaviour, IGvrGazeResponder {
 	public bool isActivated = false;
 	public bool isDisabled = true;
 	public PauseTheGame pause;
+	public PassedManager pm;
+	public GameOverManager gom;
 	public GameObject cellphone;
 	public LookForCheaters lfc;
 
@@ -76,7 +78,6 @@ public class FakeCall: MonoBehaviour, IGvrGazeResponder {
 
 	public void OpenFakeCall(){
 		//SüresiBitene Kadar
-		Debug.Log("FakeCall");
 		lfc.fakeCall = true;
 		cellphone.SetActive (true);
 		//Telefon Sesi Çalınacak
@@ -84,13 +85,12 @@ public class FakeCall: MonoBehaviour, IGvrGazeResponder {
 
 	public void CloseFakeCall(){
 		//SüresiBitene Kadar
-		Debug.Log("Bittiiii");
 		lfc.fakeCall = false;
 		cellphone.SetActive (false);
 	}
 
 	public void OnGazeEnter(){
-		if (isActivated == false && isDisabled == false && pause.isPaused == false) {
+		if (isActivated == false && isDisabled == false && pause.isPaused == false && pm.isPassed == false && gom.isGameOver == false) {
 			fill = true;
 		}
 	}

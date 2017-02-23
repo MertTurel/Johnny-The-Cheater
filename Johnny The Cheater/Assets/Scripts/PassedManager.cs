@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class PassedManager : MonoBehaviour {
 
+	//Is Passed Game?
+	public bool isPassed = false;
+
 	//Puanlama 
 	public bool passD = false;
 	public bool passDD = false;
@@ -85,6 +88,7 @@ public class PassedManager : MonoBehaviour {
 
 	void Update () {
 		if (passD == true) {
+			isPassed = true;
 			DisablePapers ();
 			SetButtons ();
 			TeacherMovement ();
@@ -92,6 +96,7 @@ public class PassedManager : MonoBehaviour {
 			scoreCircle.fillAmount = .0f;
 			scoreInfo.text = "D";
 		} else if (passDD == true) {
+			isPassed = true;
 			DisablePapers ();
 			SetButtons ();
 			TeacherMovement ();
@@ -99,6 +104,7 @@ public class PassedManager : MonoBehaviour {
 			scoreCircle.fillAmount = .0f;
 			scoreInfo.text = "D+";
 		} else if (passC == true) {
+			isPassed = true;
 			DisablePapers ();
 			SetButtons ();
 			TeacherMovement ();
@@ -106,6 +112,7 @@ public class PassedManager : MonoBehaviour {
 			scoreCircle.fillAmount = .0f;
 			scoreInfo.text = "C";
 		} else if (passCC == true) {
+			isPassed = true;
 			DisablePapers ();
 			SetButtons ();
 			TeacherMovement ();
@@ -113,6 +120,7 @@ public class PassedManager : MonoBehaviour {
 			scoreCircle.fillAmount = .0f;
 			scoreInfo.text = "C+";
 		} else if (passB == true) {
+			isPassed = true;
 			DisablePapers ();
 			SetButtons ();
 			TeacherMovement ();
@@ -120,6 +128,7 @@ public class PassedManager : MonoBehaviour {
 			scoreCircle.fillAmount = .0f;
 			scoreInfo.text = "B";
 		} else if (passBB == true) {
+			isPassed = true;
 			DisablePapers ();
 			SetButtons ();
 			TeacherMovement ();
@@ -127,6 +136,7 @@ public class PassedManager : MonoBehaviour {
 			scoreCircle.fillAmount = .0f;
 			scoreInfo.text = "B+";
 		} else if (passA == true) {
+			isPassed = true;
 			DisablePapers ();
 			SetButtons ();
 			TeacherMovement ();
@@ -134,6 +144,7 @@ public class PassedManager : MonoBehaviour {
 			scoreCircle.fillAmount = .0f;
 			scoreInfo.text = "A";
 		} else if (passAA == true) {
+			isPassed = true;
 			tm.pauseTime = true;
 			DisablePapers ();
 			SetButtons ();

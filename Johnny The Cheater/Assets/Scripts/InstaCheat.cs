@@ -16,6 +16,8 @@ public class InstaCheat: MonoBehaviour, IGvrGazeResponder {
 	public bool isActivated = false;
 	public bool isDisabled = true;
 	public PauseTheGame pause;
+	public PassedManager pm;
+	public GameOverManager gom;
 
 	//Papers
 	public Back backPaper;
@@ -82,7 +84,6 @@ public class InstaCheat: MonoBehaviour, IGvrGazeResponder {
 
 	public void OpenInstaCheater(){
 		//SüresiBitene Kadar
-		Debug.Log("InstaCheatttttt");
 		backPaper.instaCheat = true;
 		leftPaper.instaCheat = true;
 		leftbackPaper.instaCheat = true;
@@ -94,7 +95,6 @@ public class InstaCheat: MonoBehaviour, IGvrGazeResponder {
 
 	public void CloseInstaCheater(){
 		//SüresiBitene Kadar
-		Debug.Log("Bittiiii");
 		backPaper.instaCheat = false;
 		leftPaper.instaCheat = false;
 		leftbackPaper.instaCheat = false;
@@ -105,7 +105,7 @@ public class InstaCheat: MonoBehaviour, IGvrGazeResponder {
 	}
 
 	public void OnGazeEnter(){
-		if (isActivated == false && isDisabled == false && pause.isPaused == false) {
+		if (isActivated == false && isDisabled == false && pause.isPaused == false && pm.isPassed == false && gom.isGameOver == false) {
 				fill = true;
 		}
 	}

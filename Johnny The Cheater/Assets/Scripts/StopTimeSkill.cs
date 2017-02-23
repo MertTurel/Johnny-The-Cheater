@@ -16,6 +16,8 @@ public class StopTimeSkill : MonoBehaviour, IGvrGazeResponder {
 	public bool isActivated = false;
 	public bool isDisabled = true;
 	public PauseTheGame pause;
+	public PassedManager pm;
+	public GameOverManager gom;
 	public TimeIsUp tm;
 
 	void Start () {
@@ -84,7 +86,7 @@ public class StopTimeSkill : MonoBehaviour, IGvrGazeResponder {
 	}
 
 	public void OnGazeEnter(){
-		if (isActivated == false && isDisabled == false && pause.isPaused == false) {
+		if (isActivated == false && isDisabled == false && pause.isPaused == false && pm.isPassed == false && gom.isGameOver == false) {
 			fill = true;
 		}
 	}

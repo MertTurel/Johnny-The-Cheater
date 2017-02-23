@@ -4,11 +4,18 @@ using UnityEngine.UI;
 
 public class GetSpeedPoiton: MonoBehaviour, IGvrGazeResponder {
 
-	public InstaCheat ins;
-	public PauseTheGame pause;
+	public float destroyTime = 3.0f;
+	GameObject ins;
+	GameObject pause;
+	GameObject gom;
+	GameObject pm;
 
 	void Start () {
-
+		ins = GameObject.FindWithTag("InstaCheat");
+		pause = GameObject.FindWithTag("PauseGame");
+		gom = GameObject.FindWithTag("GameOverZehra");
+		pm = GameObject.FindWithTag("PassedManager");
+		Destroy (gameObject, destroyTime);
 	}
 
 	void Update () {
@@ -16,8 +23,8 @@ public class GetSpeedPoiton: MonoBehaviour, IGvrGazeResponder {
 	}
 
 	public void OnGazeEnter(){
-		if (pause.isPaused == false) {
-			ins.quantity += 1;
+		if (pause.GetComponent<PauseTheGame>().isPaused == false && gom.GetComponent<GameOverManager>().isGameOver == false && pm.GetComponent<PassedManager>().isPassed == false) {
+			ins.GetComponent<InstaCheat> ().quantity += 1;
 			gameObject.SetActive (false);
 			//SES ÇAL
 		}

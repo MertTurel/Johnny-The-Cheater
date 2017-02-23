@@ -4,8 +4,19 @@ using UnityEngine.UI;
 
 public class GetStopTimeSkill : MonoBehaviour, IGvrGazeResponder {
 
-	public PauseTheGame ps;
-	public StopTimeSkill sts;
+	public float destroyTime = 3.0f;
+	GameObject sts;
+	GameObject pause;
+	GameObject gom;
+	GameObject pm;
+
+	void Start () {
+		sts = GameObject.FindWithTag("StopTime");
+		pause = GameObject.FindWithTag("PauseGame");
+		gom = GameObject.FindWithTag("GameOverZehra");
+		pm = GameObject.FindWithTag("PassedManager");
+		Destroy (gameObject, destroyTime);
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -13,8 +24,8 @@ public class GetStopTimeSkill : MonoBehaviour, IGvrGazeResponder {
 	}
 
 	public void OnGazeEnter(){
-		if (ps.isPaused == false) {
-			sts.quantity += 1;
+		if (pause.GetComponent<PauseTheGame>().isPaused == false && gom.GetComponent<GameOverManager>().isGameOver == false && pm.GetComponent<PassedManager>().isPassed == false) {
+			sts.GetComponent<StopTimeSkill> ().quantity += 1;
 			gameObject.SetActive (false);
 			//SES ÇAL
 		}

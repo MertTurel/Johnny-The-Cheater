@@ -4,11 +4,18 @@ using UnityEngine.UI;
 
 public class GetCallPotion: MonoBehaviour, IGvrGazeResponder {
 
-	public FakeCall fc;
-	public PauseTheGame pause;
+	public float destroyTime = 3.0f;
+	GameObject fc;
+	GameObject pause;
+	GameObject gom;
+	GameObject pm;
 
 	void Start () {
-
+		fc = GameObject.FindWithTag("FakeCall");
+		pause = GameObject.FindWithTag("PauseGame");
+		gom = GameObject.FindWithTag("GameOverZehra");
+		pm = GameObject.FindWithTag("PassedManager");
+		Destroy (gameObject, destroyTime);
 	}
 
 	void Update () {
@@ -16,8 +23,8 @@ public class GetCallPotion: MonoBehaviour, IGvrGazeResponder {
 	}
 
 	public void OnGazeEnter(){
-		if (pause.isPaused == false) {
-			fc.quantity += 1;
+		if (pause.GetComponent<PauseTheGame>().isPaused == false && gom.GetComponent<GameOverManager>().isGameOver == false && pm.GetComponent<PassedManager>().isPassed == false) {
+			fc.GetComponent<FakeCall> ().quantity += 1;
 			gameObject.SetActive (false);
 			//SES ÇAL
 		}
