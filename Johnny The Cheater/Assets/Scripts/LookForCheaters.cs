@@ -12,7 +12,7 @@ public class LookForCheaters : MonoBehaviour {
 	public GameOverManager gameMan;
 	public TimeIsUp timeUp;
 
-	public NavMeshAgent agent;
+	public UnityEngine.AI.NavMeshAgent agent;
 	public int checkForCheater = 0;
 
 	public bool busted = false;
@@ -25,7 +25,7 @@ public class LookForCheaters : MonoBehaviour {
 	public AudioClip alert;
 
 	void Start () {
-		agent = GetComponent<NavMeshAgent>();
+		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 		agent.autoBraking = false;
 
 	

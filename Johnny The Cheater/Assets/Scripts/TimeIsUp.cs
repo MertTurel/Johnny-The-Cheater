@@ -10,11 +10,19 @@ public class TimeIsUp : MonoBehaviour {
 	public AudioClip lowTime;
 	public bool pauseTime = false;
 	public Text scoreInfo;
+	public Text timeInfo;
 	public GameOverManager gameMan;
 	public bool isTimeOver = false;
 	public ExamPaper myScore;
 
+	void Start(){
+
+	}
+
 	void Update () {
+
+		timeInfo.text = minutes.ToString ("00") + ":" + seconds.ToString("00");
+
 		if (seconds <= 0f) {
 			seconds = 59f;
 			if (minutes >= 1f) {
@@ -38,6 +46,7 @@ public class TimeIsUp : MonoBehaviour {
 				seconds -= Time.deltaTime;
 			if (minutes == 0f && seconds <= 10f) {
 				Debug.Log ("Low Time Sesi Çalınacak");
+				timeInfo.color = Color.red;
 			}
 		}
 	}
