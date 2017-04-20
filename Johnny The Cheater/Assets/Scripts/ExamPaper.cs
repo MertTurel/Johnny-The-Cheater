@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ExamPaper : MonoBehaviour {
 
@@ -45,6 +46,7 @@ public class ExamPaper : MonoBehaviour {
 	void Update () {
 		if (leftFront == true && score < 100) {
 			score += 5;
+			PlayerPrefs.SetInt ("PointBag", PlayerPrefs.GetInt ("PointBag") + 10);
 			scoreInfo.text = "Score = " + score;
 			scoreCircle.fillAmount += 0.05f;
 			remainingLeftF -= 1;
@@ -55,6 +57,7 @@ public class ExamPaper : MonoBehaviour {
 		}
 		if (left == true && score < 100) {
 			score += 5;
+			PlayerPrefs.SetInt ("PointBag", PlayerPrefs.GetInt ("PointBag") + 10);
 			scoreInfo.text = "Score = " + score;
 			scoreCircle.fillAmount += 0.05f;
 			remainingLeft -= 1;
@@ -65,6 +68,7 @@ public class ExamPaper : MonoBehaviour {
 		}
 		if (leftBack == true && score < 100) {
 			score += 5;
+			PlayerPrefs.SetInt ("PointBag", PlayerPrefs.GetInt ("PointBag") + 20);
 			scoreInfo.text = "Score = " + score;
 			scoreCircle.fillAmount += 0.05f;
 			remainingLeftB -= 1;
@@ -75,6 +79,7 @@ public class ExamPaper : MonoBehaviour {
 		}
 		if (back == true && score < 100) {
 			score += 5;
+			PlayerPrefs.SetInt ("PointBag", PlayerPrefs.GetInt ("PointBag") + 30);
 			scoreInfo.text = "Score = " + score;
 			scoreCircle.fillAmount += 0.05f;
 			remainingBack -= 1;
@@ -85,6 +90,7 @@ public class ExamPaper : MonoBehaviour {
 		}
 		if (rightFront == true && score < 100) {
 			score += 5;
+			PlayerPrefs.SetInt ("PointBag", PlayerPrefs.GetInt ("PointBag") + 10);
 			scoreInfo.text = "Score = " + score;
 			scoreCircle.fillAmount += 0.05f;
 			remainingRightF -= 1;
@@ -95,6 +101,7 @@ public class ExamPaper : MonoBehaviour {
 		} 
 		if (right == true && score < 100) {
 			score += 5;
+			PlayerPrefs.SetInt ("PointBag", PlayerPrefs.GetInt ("PointBag") + 10);
 			scoreInfo.text = "Score = " + score;
 			scoreCircle.fillAmount += 0.05f;
 			remainingRight -= 1;
@@ -105,6 +112,7 @@ public class ExamPaper : MonoBehaviour {
 		} 
 		if (rightBack == true && score < 100) {
 			score += 5;
+			PlayerPrefs.SetInt ("PointBag", PlayerPrefs.GetInt ("PointBag") + 20);
 			scoreInfo.text = "Score = " + score;
 			scoreCircle.fillAmount += 0.05f;
 			remainingRightB -= 1;

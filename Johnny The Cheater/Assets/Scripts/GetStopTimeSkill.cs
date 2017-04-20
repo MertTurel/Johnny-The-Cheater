@@ -25,7 +25,7 @@ public class GetStopTimeSkill : MonoBehaviour, IGvrGazeResponder {
 
 	public void OnGazeEnter(){
 		if (pause.GetComponent<PauseTheGame>().isPaused == false && gom.GetComponent<GameOverManager>().isGameOver == false && pm.GetComponent<PassedManager>().isPassed == false) {
-			sts.GetComponent<StopTimeSkill> ().quantity += 1;
+			PlayerPrefs.SetInt ("TimePot", PlayerPrefs.GetInt ("TimePot") + 1);
 			gameObject.SetActive (false);
 			//SES ÇAL
 		}

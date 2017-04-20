@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PassedManager : MonoBehaviour {
+
+	Scene myScene;
 
 	//Is Passed Game?
 	public bool isPassed = false;
@@ -53,6 +56,12 @@ public class PassedManager : MonoBehaviour {
 	//Süre
 	public TimeIsUp tm;
 
+	void Start(){
+	
+		myScene = SceneManager.GetActiveScene ();
+
+	}
+
 	void DisablePapers(){
 		leftFPaper.cheatEnabled = false;
 		leftPaper.cheatEnabled = false;
@@ -95,6 +104,14 @@ public class PassedManager : MonoBehaviour {
 			PlayWinnerSound ();
 			scoreCircle.fillAmount = .0f;
 			scoreInfo.text = "D";
+			if (PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "D" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "DD" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "C" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "CC" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "B" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "BB" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "A" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "AA") {
+				PlayerPrefs.SetInt ("LevelStars", 50);
+				PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "D");
+
+				PlayerPrefs.SetInt ("ShopPointsToSet", PlayerPrefs.GetInt ("PointBag"));
+				PlayerPrefs.SetInt ("PointBag", 0);
+			
+			}
 		} else if (passDD == true) {
 			isPassed = true;
 			DisablePapers ();
@@ -103,6 +120,20 @@ public class PassedManager : MonoBehaviour {
 			PlayWinnerSound ();
 			scoreCircle.fillAmount = .0f;
 			scoreInfo.text = "D+";
+			if (PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "DD" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "C" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "CC" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "B" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "BB" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "A" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "AA") {
+
+				PlayerPrefs.SetInt ("ShopPointsToSet", PlayerPrefs.GetInt ("PointBag"));
+				PlayerPrefs.SetInt ("PointBag", 0);
+
+				if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "D") {
+					PlayerPrefs.SetInt ("LevelStars", 50);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "DD");
+
+				} else {
+					PlayerPrefs.SetInt ("LevelStars", 100);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "DD");
+				}
+			}
 		} else if (passC == true) {
 			isPassed = true;
 			DisablePapers ();
@@ -111,6 +142,24 @@ public class PassedManager : MonoBehaviour {
 			PlayWinnerSound ();
 			scoreCircle.fillAmount = .0f;
 			scoreInfo.text = "C";
+			if (PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "C" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "CC" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "B" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "BB" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "A" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "AA") {
+
+				PlayerPrefs.SetInt ("ShopPointsToSet", PlayerPrefs.GetInt ("PointBag"));
+				PlayerPrefs.SetInt ("PointBag", 0);
+
+				if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "D") {
+					PlayerPrefs.SetInt ("LevelStars", 100);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "C");
+
+				} else if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "DD") {
+					PlayerPrefs.SetInt ("LevelStars", 50);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "C");
+
+				} else {
+					PlayerPrefs.SetInt ("LevelStars", 150);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "C");
+				}
+			}
 		} else if (passCC == true) {
 			isPassed = true;
 			DisablePapers ();
@@ -119,6 +168,28 @@ public class PassedManager : MonoBehaviour {
 			PlayWinnerSound ();
 			scoreCircle.fillAmount = .0f;
 			scoreInfo.text = "C+";
+			if (PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "CC" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "B" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "BB" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "A" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "AA") {
+
+				PlayerPrefs.SetInt ("ShopPointsToSet", PlayerPrefs.GetInt ("PointBag"));
+				PlayerPrefs.SetInt ("PointBag", 0);
+
+				if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "D") {
+					PlayerPrefs.SetInt ("LevelStars", 150);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "CC");
+
+				} else if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "DD") {
+					PlayerPrefs.SetInt ("LevelStars", 100);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "CC");
+
+				} else if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "C") {
+					PlayerPrefs.SetInt ("LevelStars", 50);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "CC");
+
+				} else {
+					PlayerPrefs.SetInt ("LevelStars", 200);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "CC");
+				}
+			}
 		} else if (passB == true) {
 			isPassed = true;
 			DisablePapers ();
@@ -127,6 +198,32 @@ public class PassedManager : MonoBehaviour {
 			PlayWinnerSound ();
 			scoreCircle.fillAmount = .0f;
 			scoreInfo.text = "B";
+			if (PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "B" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "BB" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "A" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "AA") {
+
+				PlayerPrefs.SetInt ("ShopPointsToSet", PlayerPrefs.GetInt ("PointBag"));
+				PlayerPrefs.SetInt ("PointBag", 0);
+
+				if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "D") {
+					PlayerPrefs.SetInt ("LevelStars", 200);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "B");
+
+				} else if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "DD") {
+					PlayerPrefs.SetInt ("LevelStars", 150);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "B");
+
+				} else if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "C") {
+					PlayerPrefs.SetInt ("LevelStars", 100);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "B");
+
+				} else if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "CC") {
+					PlayerPrefs.SetInt ("LevelStars", 50);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "B");
+
+				} else {
+					PlayerPrefs.SetInt ("LevelStars", 250);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "B");
+				}
+			}
 		} else if (passBB == true) {
 			isPassed = true;
 			DisablePapers ();
@@ -135,6 +232,36 @@ public class PassedManager : MonoBehaviour {
 			PlayWinnerSound ();
 			scoreCircle.fillAmount = .0f;
 			scoreInfo.text = "B+";
+			if (PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "BB" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "A" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "AA") {
+
+				PlayerPrefs.SetInt ("ShopPointsToSet", PlayerPrefs.GetInt ("PointBag"));				
+				PlayerPrefs.SetInt ("PointBag", 0);
+
+				if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "D") {
+					PlayerPrefs.SetInt ("LevelStars", 250);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "BB");
+
+				} else if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "DD") {
+					PlayerPrefs.SetInt ("LevelStars", 200);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "BB");
+
+				} else if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "C") {
+					PlayerPrefs.SetInt ("LevelStars", 150);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "BB");
+
+				} else if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "CC") {
+					PlayerPrefs.SetInt ("LevelStars", 100);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "BB");
+
+				} else if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "B") {
+					PlayerPrefs.SetInt ("LevelStars", 50);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "BB");
+
+				} else {
+					PlayerPrefs.SetInt ("LevelStars", 300);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "BB");
+				}
+			}
 		} else if (passA == true) {
 			isPassed = true;
 			DisablePapers ();
@@ -143,6 +270,40 @@ public class PassedManager : MonoBehaviour {
 			PlayWinnerSound ();
 			scoreCircle.fillAmount = .0f;
 			scoreInfo.text = "A";
+			if (PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "A" && PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "AA") {
+
+				PlayerPrefs.SetInt ("ShopPointsToSet", PlayerPrefs.GetInt ("PointBag"));
+				PlayerPrefs.SetInt ("PointBag", 0);
+
+				if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "D") {
+					PlayerPrefs.SetInt ("LevelStars", 300);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "A");
+
+				} else if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "DD") {
+					PlayerPrefs.SetInt ("LevelStars", 250);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "A");
+
+				} else if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "C") {
+					PlayerPrefs.SetInt ("LevelStars", 200);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "A");
+
+				} else if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "CC") {
+					PlayerPrefs.SetInt ("LevelStars", 150);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "A");
+
+				} else if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "B") {
+					PlayerPrefs.SetInt ("LevelStars", 100);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "A");
+
+				} else if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "BB") {
+					PlayerPrefs.SetInt ("LevelStars", 50);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "A");
+
+				} else {
+					PlayerPrefs.SetInt ("LevelStars", 350);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "A");
+				}
+			}
 		} else if (passAA == true) {
 			isPassed = true;
 			tm.pauseTime = true;
@@ -155,6 +316,44 @@ public class PassedManager : MonoBehaviour {
 			}
 			scoreCircle.fillAmount = .0f;
 			scoreInfo.text = "A+";
+			if (PlayerPrefs.GetString (myScene.name + "PassedWith") != myScene.name + "AA") {
+
+				PlayerPrefs.SetInt ("ShopPointsToSet", PlayerPrefs.GetInt ("PointBag"));
+				PlayerPrefs.SetInt ("PointBag", 0);
+
+				if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "D") {
+					PlayerPrefs.SetInt ("LevelStars", 350);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "AA");
+
+				} else if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "DD") {
+					PlayerPrefs.SetInt ("LevelStars", 300);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "AA");
+
+				} else if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "C") {
+					PlayerPrefs.SetInt ("LevelStars", 250);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "AA");
+
+				} else if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "CC") {
+					PlayerPrefs.SetInt ("LevelStars", 200);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "AA");
+
+				} else if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "B") {
+					PlayerPrefs.SetInt ("LevelStars", 150);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "AA");
+
+				} else if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "BB") {
+					PlayerPrefs.SetInt ("LevelStars", 100);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "AA");
+
+				} else if (PlayerPrefs.GetString (myScene.name + "PassedWith") == myScene.name + "A") {
+					PlayerPrefs.SetInt ("LevelStars", 50);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "AA");
+
+				} else {
+					PlayerPrefs.SetInt ("LevelStars", 400);
+					PlayerPrefs.SetString (myScene.name + "PassedWith", myScene.name + "AA");
+				}
+			}
 		}
 	}
 }

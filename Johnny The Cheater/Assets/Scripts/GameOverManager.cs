@@ -71,6 +71,10 @@ public class GameOverManager : MonoBehaviour {
 			//Kağıttaki Değişiklikler
 			scoreCircle.fillAmount = .0f;
 
+			//Oyuncu Mağaza Parası Kazanamaz
+			PlayerPrefs.SetInt("PointBag", 0);
+			PlayerPrefs.SetInt ("ShopPointsToSet", 0);
+
 			//Ses 
 			if (!soundplayed) {
 				audSource.PlayOneShot (gameOver);

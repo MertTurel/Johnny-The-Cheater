@@ -24,7 +24,7 @@ public class GetCallPotion: MonoBehaviour, IGvrGazeResponder {
 
 	public void OnGazeEnter(){
 		if (pause.GetComponent<PauseTheGame>().isPaused == false && gom.GetComponent<GameOverManager>().isGameOver == false && pm.GetComponent<PassedManager>().isPassed == false) {
-			fc.GetComponent<FakeCall> ().quantity += 1;
+			PlayerPrefs.SetInt ("CallPot", PlayerPrefs.GetInt ("CallPot") + 1);
 			gameObject.SetActive (false);
 			//SES ÇAL
 		}

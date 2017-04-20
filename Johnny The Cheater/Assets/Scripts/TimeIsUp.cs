@@ -3,21 +3,16 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class TimeIsUp : MonoBehaviour {
-
+	
 	public float seconds = 0f;
 	public float minutes = 1f;
 	public AudioSource audSource;
-	public AudioClip lowTime;
 	public bool pauseTime = false;
 	public Text scoreInfo;
 	public Text timeInfo;
 	public GameOverManager gameMan;
 	public bool isTimeOver = false;
 	public ExamPaper myScore;
-
-	void Start(){
-
-	}
 
 	void Update () {
 
@@ -45,7 +40,9 @@ public class TimeIsUp : MonoBehaviour {
 		} else if(pauseTime == false) {
 				seconds -= Time.deltaTime;
 			if (minutes == 0f && seconds <= 10f) {
-				Debug.Log ("Low Time Sesi Çalınacak");
+				if (seconds > 0 && !audSource.isPlaying) {
+					audSource.Play ();
+				}
 				timeInfo.color = Color.red;
 			}
 		}

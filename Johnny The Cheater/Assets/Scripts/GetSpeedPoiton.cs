@@ -24,7 +24,7 @@ public class GetSpeedPoiton: MonoBehaviour, IGvrGazeResponder {
 
 	public void OnGazeEnter(){
 		if (pause.GetComponent<PauseTheGame>().isPaused == false && gom.GetComponent<GameOverManager>().isGameOver == false && pm.GetComponent<PassedManager>().isPassed == false) {
-			ins.GetComponent<InstaCheat> ().quantity += 1;
+			PlayerPrefs.SetInt ("SpeedPot", PlayerPrefs.GetInt ("SpeedPot") + 1);
 			gameObject.SetActive (false);
 			//SES ÇAL
 		}

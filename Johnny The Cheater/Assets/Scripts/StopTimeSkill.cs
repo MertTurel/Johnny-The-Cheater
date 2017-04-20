@@ -11,7 +11,6 @@ public class StopTimeSkill : MonoBehaviour, IGvrGazeResponder {
 	public Text quantityInfo;
 	public float useValue = 0;
 	public float remainingValue = 0;
-	public int quantity = 0;
 	public bool fill = false;
 	public bool isActivated = false;
 	public bool isDisabled = true;
@@ -27,18 +26,18 @@ public class StopTimeSkill : MonoBehaviour, IGvrGazeResponder {
 
 	void Update () {
 
-		quantityInfo.text = "x" + quantity;
+		quantityInfo.text = "x" + PlayerPrefs.GetInt("TimePot");
 
 		//IfUserHasMoreDontDisable
-		if (quantity > 0 && isActivated == false) {
+		if (PlayerPrefs.GetInt("TimePot") > 0 && isActivated == false) {
 			remainingValue = 1;
 		}
 
 		//Enable/Disable
-		if (quantity >= 1 && remainingValue >= 1) {
+		if (PlayerPrefs.GetInt("TimePot") >= 1 && remainingValue >= 1) {
 			timeImg.GetComponent<SpriteRenderer> ().material.color = new Color (1f, 1f, 1f, 1f);
 			isDisabled = false;
-		} else if(quantity <= 0 && remainingValue <= 0) {
+		} else if(PlayerPrefs.GetInt("TimePot") <= 0 && remainingValue <= 0) {
 			timeImg.GetComponent<SpriteRenderer> ().material.color = new Color (1f, 1f, 1f, 0.4f);
 			isDisabled = true;
 		}
@@ -56,7 +55,7 @@ public class StopTimeSkill : MonoBehaviour, IGvrGazeResponder {
 		//OnUseUntilFinished
 		if (fill == true && useValue >= 1.1f) {
 			isActivated = true;	
-			quantity -= 1;
+			PlayerPrefs.SetInt ("TimePot", PlayerPrefs.GetInt ("TimePot") - 1);
 		}
 		if (isActivated == true && remainingValue > 0) {
 			StopTimeNow ();

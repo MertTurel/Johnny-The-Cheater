@@ -8,10 +8,12 @@ public class RestartButton : MonoBehaviour, IGvrGazeResponder {
 	public Image img;
 	public float barValue = 0;
 	public bool fill = false;
+	Scene myCurrentScene;
 
 	void Start () {
 		img.fillAmount = barValue;
 		gameObject.SetActive (false);
+		myCurrentScene = SceneManager.GetActiveScene ();
 	}
 
 	void Update () {
@@ -30,7 +32,7 @@ public class RestartButton : MonoBehaviour, IGvrGazeResponder {
 
 	void Restart(){
 		if(fill == true && barValue >= 1.1f){
-			SceneManager.LoadScene("Main");
+			SceneManager.LoadScene(myCurrentScene.name);
 		}
 	}
 

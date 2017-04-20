@@ -30,9 +30,7 @@ public class ReturnMainMenu : MonoBehaviour, IGvrGazeResponder {
 
 	void ReturnMain(){
 		if(fill == true && barValue >= 1.1f){
-			//SceneDeğişir(MainMenuScene)
-			//Deneme İçin Restart Button Haline Getirildi
-			//SceneManager.LoadScene("Main");
+			SceneManager.LoadScene("MainMenuScene");
 		}
 	}
 

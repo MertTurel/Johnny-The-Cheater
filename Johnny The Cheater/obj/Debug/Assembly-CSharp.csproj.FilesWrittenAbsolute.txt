@@ -16,3 +16,7 @@
 /Users/MertTurel/Documents/Unity/Johnny The Cheater/Temp/bin/Debug/Assembly-CSharp.dll
 /Users/MertTurel/Documents/Unity/Johnny The Cheater/obj/Debug/Assembly-CSharp.dll
 /Users/MertTurel/Documents/Unity/Johnny The Cheater/obj/Debug/Assembly-CSharp.dll.mdb
+/Users/MertTurel/Documents/Unity/Johnny The Cheater/Temp/bin/Debug/UnityEngine.PlaymodeTestsRunner.dll
+/Users/MertTurel/Documents/Unity/Johnny The Cheater/Temp/bin/Debug/UnityEngine.Analytics.dll
+/Users/MertTurel/Documents/Unity/Johnny The Cheater/Temp/bin/Debug/UnityEngine.HoloLens.dll
+/Users/MertTurel/Documents/Unity/Johnny The Cheater/Temp/bin/Debug/UnityEngine.VR.dll
