@@ -11,6 +11,7 @@ public class Back : MonoBehaviour,IGvrGazeResponder {
 	public ImCheating johnny;
 	public bool cheatEnabled = true;
 	public bool instaCheat =false;
+    public StatManager sm;
 
 	void Start(){
 		img.fillAmount = barValue;
@@ -31,7 +32,7 @@ public class Back : MonoBehaviour,IGvrGazeResponder {
 	void Check(){
 		if (fill == true && barValue <= 1.1f && cheatEnabled == true) {
 			if (instaCheat == false) {
-				barValue += Time.deltaTime;
+				barValue += Time.deltaTime / sm.multiplier;
 			} else if (instaCheat == true) {
 				barValue += Time.deltaTime * 4;
 			}
