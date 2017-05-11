@@ -27,7 +27,7 @@ public class GameOverManager : MonoBehaviour {
 	bool soundplayed = false;
 
 	//Süre
-	public TimeIsUp tm;
+	public TimeIsUp time;
 
 	//Kağıt
 	public Image scoreCircle;
@@ -40,11 +40,6 @@ public class GameOverManager : MonoBehaviour {
 	public LookForCheaters teacher;
 	public Transform gameOverPoint;
     public bool isBusted = false;
-    public bool isOnGameOverPoint = false;
-
-    void Start () {
-
-    }
 
 	void Update () {
 		if (isGameOver == true) {
@@ -58,15 +53,14 @@ public class GameOverManager : MonoBehaviour {
 			rightBPaper.cheatEnabled = false;
 
 			//Süre Durur
-            tm.pauseTime = true;
+			time.pauseTime = true;
 
-            //Öğretmen Durur Oyuncuya Bakar
-            teacher.checkForCheater = 0;
+			//Öğretmen Durur Oyuncuya Bakar
+			teacher.checkForCheater = 0;
 			teacher.agent.destination = gameOverPoint.transform.position;
 			if(teacher.agent.remainingDistance <= 0.5f){
 				teacherObj.transform.LookAt (target.transform.position);
 				teacher.agent.Stop ();
-                isOnGameOverPoint = true;
                 isBusted = true;
             }
 

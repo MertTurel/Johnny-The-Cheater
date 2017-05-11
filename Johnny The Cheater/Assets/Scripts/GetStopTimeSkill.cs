@@ -5,11 +5,13 @@ using UnityEngine.UI;
 public class GetStopTimeSkill : MonoBehaviour, IGvrGazeResponder {
 
 	public float destroyTime = 3.0f;
+	GameObject sts;
 	GameObject pause;
 	GameObject gom;
 	GameObject pm;
 
 	void Start () {
+		sts = GameObject.FindWithTag("StopTime");
 		pause = GameObject.FindWithTag("PauseGame");
 		gom = GameObject.FindWithTag("GameOverZehra");
 		pm = GameObject.FindWithTag("PassedManager");

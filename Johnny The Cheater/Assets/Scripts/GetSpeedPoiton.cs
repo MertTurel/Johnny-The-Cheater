@@ -5,11 +5,13 @@ using UnityEngine.UI;
 public class GetSpeedPoiton: MonoBehaviour, IGvrGazeResponder {
 
 	public float destroyTime = 3.0f;
+	GameObject ins;
 	GameObject pause;
 	GameObject gom;
 	GameObject pm;
 
 	void Start () {
+		ins = GameObject.FindWithTag("InstaCheat");
 		pause = GameObject.FindWithTag("PauseGame");
 		gom = GameObject.FindWithTag("GameOverZehra");
 		pm = GameObject.FindWithTag("PassedManager");

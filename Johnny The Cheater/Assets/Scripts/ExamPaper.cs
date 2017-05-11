@@ -13,13 +13,13 @@ public class ExamPaper : MonoBehaviour {
 	public PassedManager pass;
 
 	//AnswersRemaining
-	public int remainingLeftF = 2;
-	public int remainingLeft = 4;
-    public int remainingLeftB = 2;
-    public int remainingBack = 4;
-    public int remainingRightB = 2;
-    public int remainingRight = 4;
-    public int remainingRightF = 2;
+	int remainingLeftF = 2;
+	int remainingLeft = 4;
+	int remainingLeftB = 2;
+	int remainingBack = 4;
+	int remainingRightB = 2;
+	int remainingRight = 4;
+	int remainingRightF = 2;
 
 	//Papers
 	public LeftFront leftFPaper;
@@ -66,7 +66,7 @@ public class ExamPaper : MonoBehaviour {
 				left = false;
 				leftPaper.cheatEnabled = false;
             }
-        }
+		}
 
 		if (leftBack == true && score < 100) {
 			score += 5;
