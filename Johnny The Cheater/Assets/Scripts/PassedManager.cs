@@ -43,6 +43,7 @@ public class PassedManager : MonoBehaviour {
 	public GameObject teacherObj;
 	public LookForCheaters teacher;
 	public Transform gameOverPoint;
+    public bool isOnGameOverPoint = false;
 
 	//Johnny
 	public GameObject target;
@@ -95,6 +96,7 @@ public class PassedManager : MonoBehaviour {
 		if(teacher.agent.remainingDistance <= 0.5f){
 			teacherObj.transform.LookAt (target.transform.position);
 			teacher.agent.Stop ();
+            isOnGameOverPoint = true;
             isWinning = true;
         }
     }
