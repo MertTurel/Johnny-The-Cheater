@@ -10,6 +10,7 @@ public class LookForCheaters : MonoBehaviour {
 	public GameObject dangerIndicator;
 	private int destPoint = 0;
 	public GameOverManager gameMan;
+    public PassedManager pm;
 	public TimeIsUp timeUp;
 
 	public UnityEngine.AI.NavMeshAgent agent;
@@ -23,6 +24,8 @@ public class LookForCheaters : MonoBehaviour {
 
 	public AudioSource source;
 	public AudioClip alert;
+
+    public AudioSource footStepsSource;
 
 	void Start () {
 		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -51,6 +54,17 @@ public class LookForCheaters : MonoBehaviour {
 
 		checkForCheater = Random.Range (0, 2);
 	}
+
+    void FootSteps() {
+        if (gameMan.isOnGameOverPoint != false || pm.isOnGameOverPoint != false || paused != false || fakeCall != false)
+        {
+            footStepsSource.Stop();
+        }
+        else if (footStepsSource.isPlaying == false)
+        {
+            footStepsSource.Play();
+        }
+    }
 
 	void Update () {
 		if (checkForCheater == 1 && agent.remainingDistance < 2f && paused == false && fakeCall == false) {
@@ -88,5 +102,7 @@ public class LookForCheaters : MonoBehaviour {
 		} else if (fakeCall == false && busted == false && paused == false) {
 			agent.Resume();
 		}
-	}	
+
+        FootSteps ();
+    }	
 }

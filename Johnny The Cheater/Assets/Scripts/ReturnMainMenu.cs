@@ -30,8 +30,20 @@ public class ReturnMainMenu : MonoBehaviour, IGvrGazeResponder {
 
 	void ReturnMain(){
 		if(fill == true && barValue >= 1.1f){
-			SceneManager.LoadScene("MainMenuScene");
-		}
+
+            if (SceneManager.GetActiveScene().name == "TutorialSceneContinue" || SceneManager.GetActiveScene().name == "TutorialLevel")
+            {
+                PlayerPrefs.DeleteAll();
+                PlayerPrefs.SetString("isTutorialPlayed", "true");
+                SceneManager.LoadScene("MainMenuScene");
+            }
+         
+            else
+            {
+                SceneManager.LoadScene("MainMenuScene");
+            }
+        }
+
 	}
 
 	public void OnGazeEnter(){

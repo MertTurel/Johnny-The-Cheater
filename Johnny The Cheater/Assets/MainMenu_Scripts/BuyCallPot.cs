@@ -12,10 +12,11 @@ public class BuyCallPot : MonoBehaviour, IGvrGazeResponder {
 	public bool fill = false;
 	public bool isDisabled = false;
 	public TheShop shop;
+    public AudioSource audSource;
+    public AudioClip buyItemSound;
 
-
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		circle.fillAmount = barValue;
 	}
 	
@@ -35,6 +36,7 @@ public class BuyCallPot : MonoBehaviour, IGvrGazeResponder {
 		if(fill == true && barValue >= 1.1f){
 			PlayerPrefs.SetInt ("ShopPoint", PlayerPrefs.GetInt ("ShopPoint") - shop.callPotionPrice);
 			PlayerPrefs.SetInt ("CallPot", PlayerPrefs.GetInt ("CallPot") + 1);
+            audSource.PlayOneShot(buyItemSound);
 		}
 
 		if (fill == true && barValue <= 1.1f) {

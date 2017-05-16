@@ -49,6 +49,14 @@ public class StatManager: MonoBehaviour {
         {
             multiplier = 1.75f;
         }
- 
+        else if (SceneManager.GetActiveScene().name == "TutorialLevel")
+        {
+            multiplier = 0.5f;
+        }
+        else if (SceneManager.GetActiveScene().name == "TutorialSceneContinue")
+        {
+            multiplier = 0.5f;
+        }
+
     }
 }

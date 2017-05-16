@@ -38,6 +38,8 @@ public class ExamPaper : MonoBehaviour {
 	public bool rightFront = false;
 	public bool right = false;
 	public bool rightBack = false;
+    public AudioSource audSource;
+    public AudioClip successfulCheat;
 
     void Start(){
 		scoreCircle.fillAmount = score;
@@ -50,6 +52,7 @@ public class ExamPaper : MonoBehaviour {
 			scoreInfo.text = "Score = " + score;
 			scoreCircle.fillAmount += 0.05f;
 			remainingLeftF -= 1;
+            audSource.PlayOneShot(successfulCheat);
 			if (remainingLeftF == 0) {             
 				leftFront = false;
 				leftFPaper.cheatEnabled = false;
@@ -62,7 +65,8 @@ public class ExamPaper : MonoBehaviour {
 			scoreInfo.text = "Score = " + score;
 			scoreCircle.fillAmount += 0.05f;
 			remainingLeft -= 1;
-			if (remainingLeft == 0) {
+            audSource.PlayOneShot(successfulCheat);
+            if (remainingLeft == 0) {
 				left = false;
 				leftPaper.cheatEnabled = false;
             }
@@ -74,7 +78,8 @@ public class ExamPaper : MonoBehaviour {
 			scoreInfo.text = "Score = " + score;
 			scoreCircle.fillAmount += 0.05f;
 			remainingLeftB -= 1;
-			if (remainingLeftB == 0) {
+            audSource.PlayOneShot(successfulCheat);
+            if (remainingLeftB == 0) {
 				leftBack = false;
 				leftBPaper.cheatEnabled = false;
             }
@@ -86,7 +91,8 @@ public class ExamPaper : MonoBehaviour {
 			scoreInfo.text = "Score = " + score;
 			scoreCircle.fillAmount += 0.05f;
 			remainingBack -= 1;
-			if (remainingBack == 0) {
+            audSource.PlayOneShot(successfulCheat);
+            if (remainingBack == 0) {
 				back = false;
 				backPaper.cheatEnabled = false;
             }
@@ -98,7 +104,8 @@ public class ExamPaper : MonoBehaviour {
 			scoreInfo.text = "Score = " + score;
 			scoreCircle.fillAmount += 0.05f;
 			remainingRightF -= 1;
-			if (remainingRightF == 0) {
+            audSource.PlayOneShot(successfulCheat);
+            if (remainingRightF == 0) {
 				rightFront = false;
 				rightFPaper.cheatEnabled = false;
             }
@@ -110,7 +117,8 @@ public class ExamPaper : MonoBehaviour {
 			scoreInfo.text = "Score = " + score;
 			scoreCircle.fillAmount += 0.05f;
 			remainingRight -= 1;
-			if (remainingRight == 0) {
+            audSource.PlayOneShot(successfulCheat);
+            if (remainingRight == 0) {
 				right = false;
 				rightPaper.cheatEnabled = false;
             }
@@ -122,7 +130,8 @@ public class ExamPaper : MonoBehaviour {
 			scoreInfo.text = "Score = " + score;
 			scoreCircle.fillAmount += 0.05f;
 			remainingRightB -= 1;
-			if (remainingRightB == 0) {
+            audSource.PlayOneShot(successfulCheat);
+            if (remainingRightB == 0) {
 				rightBack = false;
 				rightBPaper.cheatEnabled = false;
             }

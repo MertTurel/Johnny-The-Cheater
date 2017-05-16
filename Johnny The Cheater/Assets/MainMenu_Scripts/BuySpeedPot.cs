@@ -12,6 +12,8 @@ public class BuySpeedPot : MonoBehaviour, IGvrGazeResponder {
 	public bool isDisabled = false;
 	public bool fill = false;
 	public TheShop shop;
+    public AudioSource audSource;
+    public AudioClip buyItemSound;
 
 	// Use this for initialization
 	void Start () {
@@ -33,6 +35,7 @@ public class BuySpeedPot : MonoBehaviour, IGvrGazeResponder {
 		if(fill == true && barValue >= 1.1f){
 			PlayerPrefs.SetInt ("ShopPoint", PlayerPrefs.GetInt ("ShopPoint") - shop.speedPotionPrice);
 			PlayerPrefs.SetInt ("SpeedPot", PlayerPrefs.GetInt ("SpeedPot") + 1);
+            audSource.PlayOneShot(buyItemSound);
 		}
 
 		if (fill == true && barValue <= 1.1f) {

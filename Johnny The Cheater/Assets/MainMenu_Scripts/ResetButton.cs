@@ -8,8 +8,11 @@ public class ResetButton : MonoBehaviour, IGvrGazeResponder {
 	public Image img;
 	public float barValue = 0;
 	public bool fill = false;
+    public GameObject resetMenuButton;
+    public GameObject cancelButton;
 
 	void Start () {
+        gameObject.SetActive(false);
 		img.fillAmount = barValue;
 	}
 
@@ -30,6 +33,10 @@ public class ResetButton : MonoBehaviour, IGvrGazeResponder {
 	void ResetGame(){
 		if(fill == true && barValue >= 1.1f){
 			PlayerPrefs.DeleteAll ();
+            PlayerPrefs.SetString("isTutorialPlayed", "true");
+            gameObject.SetActive(false);
+            cancelButton.SetActive(false);
+            resetMenuButton.SetActive(true);
 		}
 	}
 

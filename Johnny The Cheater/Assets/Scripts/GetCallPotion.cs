@@ -24,7 +24,6 @@ public class GetCallPotion: MonoBehaviour, IGvrGazeResponder {
 		if (pause.GetComponent<PauseTheGame>().isPaused == false && gom.GetComponent<GameOverManager>().isGameOver == false && pm.GetComponent<PassedManager>().isPassed == false) {
 			PlayerPrefs.SetInt ("CallPot", PlayerPrefs.GetInt ("CallPot") + 1);
 			gameObject.SetActive (false);
-			//SES ÇAL
 		}
 	}
 

@@ -56,6 +56,10 @@ public class PotionSpawner : MonoBehaviour {
         {
             spawnTime = 20.0f;
         }
+        else if (SceneManager.GetActiveScene().name == "TutorialSceneContinue")
+        {
+            spawnTime = 7.0f;
+        }
 
     }
 
