@@ -39,7 +39,11 @@ public class ExamPaper : MonoBehaviour {
 	public bool right = false;
 	public bool rightBack = false;
     public AudioSource audSource;
+    public AudioSource audSource2;
     public AudioClip successfulCheat;
+    public AudioClip[] angry;
+    public AudioClip femaleAngry;
+    
 
     void Start(){
 		scoreCircle.fillAmount = score;
@@ -56,6 +60,14 @@ public class ExamPaper : MonoBehaviour {
 			if (remainingLeftF == 0) {             
 				leftFront = false;
 				leftFPaper.cheatEnabled = false;
+                if (leftFPaper.tag == "Female")
+                {
+                    audSource2.PlayOneShot(femaleAngry);
+                }
+                else
+                {
+                    audSource2.PlayOneShot(angry[Random.Range(0, 2)]);
+                }
             }
 		}
 
@@ -69,6 +81,14 @@ public class ExamPaper : MonoBehaviour {
             if (remainingLeft == 0) {
 				left = false;
 				leftPaper.cheatEnabled = false;
+                if (leftPaper.tag == "Female")
+                {
+                    audSource2.PlayOneShot(femaleAngry);
+                }
+                else
+                {
+                    audSource2.PlayOneShot(angry[Random.Range(0, 2)]);
+                }
             }
         }
 
@@ -82,8 +102,16 @@ public class ExamPaper : MonoBehaviour {
             if (remainingLeftB == 0) {
 				leftBack = false;
 				leftBPaper.cheatEnabled = false;
+                if (leftBPaper.tag == "Female")
+                {
+                    audSource2.PlayOneShot(femaleAngry);
+                }
+                else
+                {
+                    audSource2.PlayOneShot(angry[Random.Range(0, 2)]);
+                }
             }
-		}
+        }
 
 		if (back == true && score < 100) {
 			score += 5;
@@ -95,8 +123,16 @@ public class ExamPaper : MonoBehaviour {
             if (remainingBack == 0) {
 				back = false;
 				backPaper.cheatEnabled = false;
+                if (backPaper.tag == "Female")
+                {
+                    audSource2.PlayOneShot(femaleAngry);
+                }
+                else
+                {
+                    audSource2.PlayOneShot(angry[Random.Range(0, 2)]);
+                }
             }
-		}
+        }
 
 		if (rightFront == true && score < 100) {
 			score += 5;
@@ -108,8 +144,16 @@ public class ExamPaper : MonoBehaviour {
             if (remainingRightF == 0) {
 				rightFront = false;
 				rightFPaper.cheatEnabled = false;
+                if (rightFPaper.tag == "Female")
+                {
+                    audSource2.PlayOneShot(femaleAngry);
+                }
+                else
+                {
+                    audSource2.PlayOneShot(angry[Random.Range(0, 2)]);
+                }
             }
-		} 
+        } 
 
 		if (right == true && score < 100) {
 			score += 5;
@@ -119,10 +163,17 @@ public class ExamPaper : MonoBehaviour {
 			remainingRight -= 1;
             audSource.PlayOneShot(successfulCheat);
             if (remainingRight == 0) {
-				right = false;
-				rightPaper.cheatEnabled = false;
+                right = false;
+                rightPaper.cheatEnabled = false;
+                if (rightPaper.tag == "Female")
+                {
+                    audSource2.PlayOneShot(femaleAngry);
+                }
+                else {
+                    audSource2.PlayOneShot(angry[Random.Range(0, 2)]);
+                }
             }
-		} 
+        } 
 
 		if (rightBack == true && score < 100) {
 			score += 5;
@@ -134,8 +185,16 @@ public class ExamPaper : MonoBehaviour {
             if (remainingRightB == 0) {
 				rightBack = false;
 				rightBPaper.cheatEnabled = false;
+                if (rightBPaper.tag == "Female")
+                {
+                    audSource2.PlayOneShot(femaleAngry);
+                }
+                else
+                {
+                    audSource2.PlayOneShot(angry[Random.Range(0, 2)]);
+                }
             }
-		}
+        }
        
 		if (score >= 60 && score < 65 && tm.isTimeOver == true){
 			//D

@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: 21cbd35e9595c6c4097d8c1c92bdca40
+timeCreated: 1482867381
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: CINEMA_4D_Editor
+    100002: //RootNode
+    100004: Teacher
+    100006: Teacher_MeshPart0
+    100008: Teacher_MeshPart1
+    100010: Teacher_MeshPart10
+    100012: Teacher_MeshPart11
+    100014: Teacher_MeshPart12
+    100016: Teacher_MeshPart13
+    100018: Teacher_MeshPart14
+    100020: Teacher_MeshPart15
+    100022: Teacher_MeshPart16
+    100024: Teacher_MeshPart17
+    100026: Teacher_MeshPart2
+    100028: Teacher_MeshPart3
+    100030: Teacher_MeshPart4
+    100032: Teacher_MeshPart5
+    100034: Teacher_MeshPart6
+    100036: Teacher_MeshPart7
+    100038: Teacher_MeshPart8
+    100040: Teacher_MeshPart9
+    400000: CINEMA_4D_Editor
+    400002: //RootNode
+    400004: Teacher
+    400006: Teacher_MeshPart0
+    400008: Teacher_MeshPart1
+    400010: Teacher_MeshPart10
+    400012: Teacher_MeshPart11
+    400014: Teacher_MeshPart12
+    400016: Teacher_MeshPart13
+    400018: Teacher_MeshPart14
+    400020: Teacher_MeshPart15
+    400022: Teacher_MeshPart16
+    400024: Teacher_MeshPart17
+    400026: Teacher_MeshPart2
+    400028: Teacher_MeshPart3
+    400030: Teacher_MeshPart4
+    400032: Teacher_MeshPart5
+    400034: Teacher_MeshPart6
+    400036: Teacher_MeshPart7
+    400038: Teacher_MeshPart8
+    400040: Teacher_MeshPart9
+    2300000: Teacher_MeshPart0
+    2300002: Teacher_MeshPart1
+    2300004: Teacher_MeshPart10
+    2300006: Teacher_MeshPart11
+    2300008: Teacher_MeshPart12
+    2300010: Teacher_MeshPart13
+    2300012: Teacher_MeshPart14
+    2300014: Teacher_MeshPart15
+    2300016: Teacher_MeshPart16
+    2300018: Teacher_MeshPart17
+    2300020: Teacher_MeshPart2
+    2300022: Teacher_MeshPart3
+    2300024: Teacher_MeshPart4
+    2300026: Teacher_MeshPart5
+    2300028: Teacher_MeshPart6
+    2300030: Teacher_MeshPart7
+    2300032: Teacher_MeshPart8
+    2300034: Teacher_MeshPart9
+    3300000: Teacher_MeshPart0
+    3300002: Teacher_MeshPart1
+    3300004: Teacher_MeshPart10
+    3300006: Teacher_MeshPart11
+    3300008: Teacher_MeshPart12
+    3300010: Teacher_MeshPart13
+    3300012: Teacher_MeshPart14
+    3300014: Teacher_MeshPart15
+    3300016: Teacher_MeshPart16
+    3300018: Teacher_MeshPart17
+    3300020: Teacher_MeshPart2
+    3300022: Teacher_MeshPart3
+    3300024: Teacher_MeshPart4
+    3300026: Teacher_MeshPart5
+    3300028: Teacher_MeshPart6
+    3300030: Teacher_MeshPart7
+    3300032: Teacher_MeshPart8
+    3300034: Teacher_MeshPart9
+    4300000: Teacher_MeshPart0
+    4300002: Teacher_MeshPart1
+    4300004: Teacher_MeshPart2
+    4300006: Teacher_MeshPart3
+    4300008: Teacher_MeshPart4
+    4300010: Teacher_MeshPart5
+    4300012: Teacher_MeshPart6
+    4300014: Teacher_MeshPart7
+    4300016: Teacher_MeshPart8
+    4300018: Teacher_MeshPart9
+    4300020: Teacher_MeshPart10
+    4300022: Teacher_MeshPart11
+    4300024: Teacher_MeshPart12
+    4300026: Teacher_MeshPart13
+    4300028: Teacher_MeshPart14
+    4300030: Teacher_MeshPart15
+    4300032: Teacher_MeshPart16
+    4300034: Teacher_MeshPart17
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

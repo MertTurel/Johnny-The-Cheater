@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6bb143c13f1e24701ab880d9707f175d
+labels:
+- Ammo
+- Energy
+- Healthpack
+- Loot
+- Potion
+- Sci-fi
+timeCreated: 1488199271
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

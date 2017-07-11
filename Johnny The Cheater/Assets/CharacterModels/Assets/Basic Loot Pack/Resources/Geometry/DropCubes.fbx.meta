@@ -1,0 +1,153 @@
+fileFormatVersion: 2
+guid: a68ef7cfb5fcf4261818b4614aa2d937
+timeCreated: 1488199011
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: DropCube.000
+    100002: DropCube.001
+    100004: DropCube.002
+    100006: DropCube.003
+    100008: DropCube.004
+    100010: DropCube.005
+    100012: DropCube.006
+    100014: DropCube.007
+    100016: DropCube.008
+    100018: DropCube.009
+    100020: DropCube.010
+    100022: DropCube.011
+    100024: DropCube.012
+    100026: DropCube.013
+    100028: DropCube.014
+    100030: DropCube.015
+    100032: //RootNode
+    400000: DropCube.000
+    400002: DropCube.001
+    400004: DropCube.002
+    400006: DropCube.003
+    400008: DropCube.004
+    400010: DropCube.005
+    400012: DropCube.006
+    400014: DropCube.007
+    400016: DropCube.008
+    400018: DropCube.009
+    400020: DropCube.010
+    400022: DropCube.011
+    400024: DropCube.012
+    400026: DropCube.013
+    400028: DropCube.014
+    400030: DropCube.015
+    400032: //RootNode
+    2300000: DropCube.000
+    2300002: DropCube.001
+    2300004: DropCube.002
+    2300006: DropCube.003
+    2300008: DropCube.004
+    2300010: DropCube.005
+    2300012: DropCube.006
+    2300014: DropCube.007
+    2300016: DropCube.008
+    2300018: DropCube.009
+    2300020: DropCube.010
+    2300022: DropCube.011
+    2300024: DropCube.012
+    2300026: DropCube.013
+    2300028: DropCube.014
+    2300030: DropCube.015
+    3300000: DropCube.000
+    3300002: DropCube.001
+    3300004: DropCube.002
+    3300006: DropCube.003
+    3300008: DropCube.004
+    3300010: DropCube.005
+    3300012: DropCube.006
+    3300014: DropCube.007
+    3300016: DropCube.008
+    3300018: DropCube.009
+    3300020: DropCube.010
+    3300022: DropCube.011
+    3300024: DropCube.012
+    3300026: DropCube.013
+    3300028: DropCube.014
+    3300030: DropCube.015
+    4300000: DropCube.015
+    4300002: DropCube.014
+    4300004: DropCube.013
+    4300006: DropCube.012
+    4300008: DropCube.011
+    4300010: DropCube.010
+    4300012: DropCube.009
+    4300014: DropCube.008
+    4300016: DropCube.007
+    4300018: DropCube.006
+    4300020: DropCube.005
+    4300022: DropCube.004
+    4300024: DropCube.003
+    4300026: DropCube.002
+    4300028: DropCube.001
+    4300030: DropCube.000
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

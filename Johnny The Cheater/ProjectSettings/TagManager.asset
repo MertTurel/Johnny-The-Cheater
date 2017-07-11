@@ -12,6 +12,11 @@ TagManager:
   - StopTime
   - ExamPaper
   - TimeIsUp
+  - Female
+  - HistoryTeacher
+  - LiteratureTeacher
+  - PhysicsTeacher
+  - ChemistryTeacher
   layers:
   - Default
   - TransparentFX

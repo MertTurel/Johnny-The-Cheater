@@ -198,8 +198,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: D:/Unity Files/JohnnyTheCheater-17.05.2017/Johnny The Cheater/johnnyStore.keystore
+  AndroidKeyaliasName: johnny
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 1
@@ -213,7 +213,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 0}
+      m_Icon: {fileID: 2800000, guid: 455176f8a44958f4b9c49dbb993d8c5f, type: 3}
       m_Width: 128
       m_Height: 128
   m_BuildTargetBatching: []
@@ -541,9 +541,9 @@ PlayerSettings:
     Game_Performance: 0
     Hub: 0
     Purchasing: 0
-    UNet: 0
+    UNet: 1
     Unity_Ads: 0
-  cloudProjectId: 
-  projectName: 
-  organizationId: 
+  cloudProjectId: d23e0687-9f05-4a27-ad1e-bf8652909e59
+  projectName: Johnny The Cheater
+  organizationId: sengoz
   cloudEnabled: 0
